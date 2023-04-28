@@ -1,24 +1,18 @@
-
 import os
 import requests, json
-from flask import Flask, request
 
-
-app = Flask(__name__)
-@app.route('/', methods=['GET'])
 def get_weather():
-    lat = request.args.get('lat')
-    long = request.args.get('lon')
+    LAT = os.getenv('LAT')
+    LONG = os.getenv('LONG')
     API_KEY = os.getenv('API_KEY')
 
     if not (LAT and LONG and API_KEY):
         return None
-    
-    BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
-  
-    #URL
-    URL = BASE_URL + "lat=" + lat +"&lon=" + long + "&appid=" + API_KEY
 
+    # base URL
+    BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
+    # upadting the URL
+    URL = BASE_URL + "lat=" + LAT +"&lon=" + LONG + "&appid=" + API_KEY
     # HTTP request
     response = requests.get(URL)
 
@@ -29,4 +23,5 @@ def get_weather():
         return None
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8081)
+    response = get_weather()
+    print(response)
