@@ -20,6 +20,6 @@ Pour utiliser ce projet, suivez les étapes suivantes :
 
 ## Variables d'environnement
 
-LAT: la latitude du lieu souhaité
-LONG: la longitude du lieu souhaité
-API_KEY: la clé API OpenWeather
+- LAT: la latitude du lieu souhaité
+- LONG: la longitude du lieu souhaité
+- API_KEY: la clé API OpenWeather
