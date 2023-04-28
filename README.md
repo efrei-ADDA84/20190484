@@ -1,6 +1,6 @@
 # Projet Weather
 
-#TP1
+# TP1
 
 Ce projet permet de récupérer la météo d'un lieu donné en utilisant l'API OpenWeather. Le lieu doit être défini par sa latitude et sa longitude passées en variable d'environnement.
 
@@ -26,7 +26,7 @@ Pour utiliser ce projet, suivez les étapes suivantes :
 - LONG: la longitude du lieu souhaité
 - API_KEY: la clé API OpenWeather
 
-#TP2
+# TP2
 
 Voir la branche TP2.
 Utiliser Github action pour build et push l’image à chaque nouveau commit.
