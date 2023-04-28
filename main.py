@@ -8,7 +8,7 @@ app = Flask(__name__)
 def get_weather():
     lat = request.args.get('lat')
     lon = request.args.get('lon')
-    API_KEY = os.environ.get('API_KEY')
+    API_KEY = os.getenv('API_KEY')
 
     if not (lat and lon and API_KEY):
         return None
