@@ -35,6 +35,7 @@ jobs:
       - name: Deploy to Azure Container Instance
         uses: azure/aci-deploy@v1
         with:
+          name: 20190484
           resource-group: ADDA84-CTP
           dns-name-label: devops-2019484
           image: efreidevops.azurecr.io/20190484:v1
