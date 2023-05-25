@@ -42,4 +42,9 @@ jobs:
           registry-login-server: efreidevops.azurecr.io
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-          location: francecentral
+          location: "west europe"
+          environment-variables: |
+            API_KEY=${{ secrets.API_KEY }}
+
+
+
