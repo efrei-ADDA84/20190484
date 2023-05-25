@@ -39,10 +39,11 @@ jobs:
           resource-group: ADDA84-CTP
           dns-name-label: devops-20190484
           image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/20190484:v1
-          registry-login-server: efreidevops.azurecr.io
+          registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
           location: "west europe"
+          ports : 8081
           environment-variables: |
             API_KEY=${{ secrets.API_KEY }}
 
