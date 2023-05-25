@@ -16,7 +16,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          azure-credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Login to Azure Container Registry
         uses: azure/docker-login@v1
