@@ -1,6 +1,5 @@
 # TP2
 
-Voir la branche TP2.
 Utiliser Github action pour build et push l’image à chaque nouveau commit.
 
 En utilisant la commande suivante il est possible d'avoir l'API qui renvoie la météo :
