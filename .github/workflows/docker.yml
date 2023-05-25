@@ -1,11 +1,12 @@
-name: Build and Push Docker Image
+name: Build and Deploy to Azure Container Instance
 
 on:
   push:
-    branches: [TP3]
+    branches:
+      - TP3
 
 jobs:
-  build-and-push:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,7 +16,7 @@ jobs:
       - name: Login to Azure Container Registry
         uses: azure/docker-login@v1
         with:
-          login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          login-server: efreidevops.azurecr.io
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
           azure-credentials: ${{ secrets.AZURE_CREDENTIALS }}
@@ -25,16 +26,15 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/weather:latest
+          tags: efreidevops.azurecr.io/2019484:v1
 
       - name: Deploy to Azure Container Instance
         uses: azure/aci-deploy@v1
         with:
-          resource-group: ${{ secrets.RESOURCE_GROUP }}
-          dns-name-label: my-container
-          image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/weather:latest
-          registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          resource-group: ADDA84-CTP
+          dns-name-label: devops-2019484
+          image: efreidevops.azurecr.io/20190484:v1
+          registry-login-server: efreidevops.azurecr.io
           registry-username: ${{ secrets.REGISTRY_USERNAME }}
           registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-
-
+          location: francecentral
