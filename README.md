@@ -49,3 +49,10 @@ Utiliser Github action pour mettre à disposition notre image (format API) sur A
 API qui renvoie la météo en utilisant la commande suivante :
 
 ` curl "http://devops-20190484.westeurope.azurecontainer.io:8081/?lat=5.902785&lon=102.754175" `
+
+# TP4
+
+Voir la branche TP4
+Créer une machine virtuelle Azure (VM) avec une adresse IP publique dans un réseau existant
+
+Utiliser la commade ` ssh -i id_rsa.pem devops@4.233.64.188 `
